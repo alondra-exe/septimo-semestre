@@ -1,0 +1,19 @@
+﻿<Window x:Class="_2Unidad1Actividad.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_2Unidad1Actividad"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="115.714" Width="341.964">
+    <StackPanel>
+        <StackPanel>
+            <Button x:Name="btnIniciar" Click="btnIniciar_Click">
+                Iniciar servidor
+            </Button>
+            <Button x:Name="btnDetener" Click="btnDetener_Click">
+                Detener servidor
+            </Button>
+        </StackPanel>
+    </StackPanel>
+</Window>

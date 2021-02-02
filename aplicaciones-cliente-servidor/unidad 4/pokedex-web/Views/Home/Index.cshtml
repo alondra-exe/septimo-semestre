@@ -1,0 +1,33 @@
+﻿@model List<PokedexWEB.Models.DatosPokemon>
+@{
+    Layout = "PokedexLayout";
+}
+<section class="listaPokemons">
+    <ul id="pokealign">
+        @foreach (var pokemon in Model)
+        {
+            <li id="card">
+                <table>
+                    <tr>
+                        <td id="idPoke">
+                            <section id="numPokemon"><label>@pokemon.id</label></section>
+                        </td>
+                        <td id="infoPoke">
+                            <section id="imagealign">
+                                <img id="iconPokemon" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/@(pokemon.id).png" ; />
+                            </section>
+                            <br />
+                            <label id="namePokemon">@pokemon.name.ToUpper()</label>
+                            <br />
+                            <label>PESO:</label>
+                            <label id="weightPokemon">@pokemon.weight kg</label>
+                            <br />
+                            <label>ALTURA:</label>
+                            <label id="heightPokemon">@pokemon.height m</label>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+        }
+    </ul>
+</section>

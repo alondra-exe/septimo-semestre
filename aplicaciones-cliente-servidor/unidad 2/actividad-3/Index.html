@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Modificar tabloide deportido | Alondra Elizabeth Delgadillo Silos</title>
+    <link rel="stylesheet" href="estilos.css" type="text/css" />
+</head>
+<body>
+    <h1>Modificar tabloide deportivo</h1>
+    <hr />
+    <p>Ingrese los datos de ambos equipos:</p>
+    <form method="get" action="/actividad3/deporte">
+        <table>
+            <tr>
+                <td>
+                    <h2>Primer equipo</h2>
+                    <label>Nombre del equipo:</label>
+                    <br />
+                    <input type="text" name="equipoU" />
+                    <br />
+                    <label>Seleccione el color del equipo:</label>
+                    <br />
+                    <input type="color" name="colorU" />
+                </td>
+
+                <td>
+                    <h2>Segundo equipo</h2>
+                    <label>Nombre del equipo:</label>
+                    <br />
+                    <input type="text" name="equipoD" />
+                    <br />
+                    <label>Seleccione el color del equipo:</label>
+                    <br />
+                    <input type="color" name="colorD" />
+                </td>
+            </tr>
+        </table>
+
+        <input type="submit" value="Agregar equipos" />
+    </form>
+    <hr />
+    <form method="post" action="/actividad3/">
+        <h2>Modificar puntos</h2>
+        <p>Sumar puntos a:</p>
+        <input type="submit" value="Equipo uno" name="punto" />
+        <input type="submit" value="Equipo dos" name="punto" />
+        <br />
+        <input type="submit" value="Reiniciar puntos" name="punto" />
+    </form>
+</body>
+</html>

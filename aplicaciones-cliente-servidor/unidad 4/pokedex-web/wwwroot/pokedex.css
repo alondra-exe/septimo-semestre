@@ -1,0 +1,132 @@
+﻿html {
+    background-color: #FF1C1C;
+    font-family: Arial;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    background-color: #FF1C1C;
+    border-bottom: 2px solid black;
+    vertical-align: central;
+    margin: 0;
+}
+
+    header section {
+        height: 70px;
+        display: flex;
+        align-items: center;
+        margin: 20px;
+    }
+
+    header img {
+        width: 200px;
+    }
+
+    header label {
+        color: #ffffff;
+        font-size: 40px;
+        font-weight: bolder;
+        margin-left: 10px;
+    }
+
+footer {
+    background-color: #FF1C1C;
+    text-align: center;
+    border-top: 2px solid black;
+    margin: 5px;
+    margin: 0;
+}
+
+    footer p, label {
+        color: #ffffff;
+        font-size: 15px;
+    }
+
+main {
+    background-color: #E6E6E6;
+    padding: 5px;
+}
+
+#footerNombres {
+    font-weight: bold;
+}
+
+#imagealign {
+    text-align: center;
+    width: 220px;
+}
+
+#iconPokemon {
+    width: 170px;
+}
+
+#numPokemon {
+    font-size: 15px;
+    font-weight: bold;
+    color: #808080;
+}
+
+#namePokemon {
+    font-size: 25px;
+    font-weight: bolder;
+    color: #0d0d0d;
+}
+
+.listaPokemons {
+    margin-left: -40px;
+    padding: 0px;
+}
+
+#pokealign {
+    list-style: none;
+    text-align: center;
+}
+
+#card {
+    display: inline-block;
+    background-color: white;
+    margin: 10px;
+    width: 270px;
+    height: 300px;
+    padding: 2px;
+    text-align: center;
+    border-radius: 15px;
+    border: 0px;
+    -webkit-box-shadow: 8px 8px 6px -6px black;
+    -moz-box-shadow: 8px 8px 6px -6px black;
+    box-shadow: 8px 8px 6px -6px black;
+}
+
+#idPoke {
+    background-color: #FF1C1C;
+    vertical-align: bottom;
+    height: 295px;
+    width: 40px;
+    position: static;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+    #idPoke section {
+        width: 40px;
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+
+        #idPoke section label {
+            color: white;
+            font-size: 60px;
+            font-weight: bolder;
+        }
+
+#infoPoke {
+    vertical-align: top;
+}
+
+    #infoPoke label {
+        color: black;
+        margin: 5px;
+    }

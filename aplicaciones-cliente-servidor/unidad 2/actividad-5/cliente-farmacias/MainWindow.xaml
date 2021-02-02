@@ -1,0 +1,99 @@
+﻿<Window x:Class="Actividad5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Actividad5"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="511.5" Width="1005">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="340"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Row="1" Margin="576,156,5,0" Source="/images/foot.png" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <StackPanel Grid.RowSpan="2" Grid.Column="1" Margin="8" DockPanel.Dock="Left" Width="300">
+            <StackPanel.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="Margin" Value="10"></Setter>
+                    <Setter Property="Background" Value="#ff6c6c"></Setter>
+                    <Setter Property="BorderBrush" Value="Black"></Setter>
+                    <Setter Property="BorderThickness" Value="1"></Setter>
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+                <Style TargetType="Button">
+                    <Setter Property="Padding" Value="5"></Setter>
+                    <Setter Property="FontSize" Value="13"></Setter>
+                    <Setter Property="FontWeight" Value="Bold"></Setter>
+                    <Setter Property="Background" Value="Transparent"></Setter>
+                    <Setter Property="BorderThickness" Value="0"></Setter>
+                </Style>
+                <Style TargetType="Label">
+                    <Setter Property="Margin" Value="10 5 0 -5"></Setter>
+                    <Setter Property="FontWeight" Value="SemiBold"></Setter>
+                    <Setter Property="FontSize" Value="13"></Setter>
+
+                </Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="Margin" Value="10 0 10 0"></Setter>
+                </Style>
+            </StackPanel.Resources>
+            <Label>Nombre</Label>
+            <TextBox Name="txtNombre" Text="{Binding Nombre}"></TextBox>
+            <Label>Nombre Cientifico</Label>
+            <TextBox Name="txtCientifico" Text="{Binding NombreCientifico}"></TextBox>
+            <Label>Contenido</Label>
+            <TextBox Name="txtContenido" Text="{Binding Contenido}"></TextBox>
+            <Label>Precio</Label>
+            <TextBox Name="txtPrecio" Text="{Binding Precio}"></TextBox>
+            <Label>Estado</Label>
+            <ComboBox Margin="10 0 10 0" Name="cmbStock" SelectedValue="{Binding Stock}"></ComboBox>
+            <Border BorderBrush="Black" BorderThickness="1" Margin="0 20 0 10"></Border>
+            <Border>
+                <Button Content="Agregar" Name="Agregar" Click="Agregar_Click"></Button>
+            </Border>
+        </StackPanel>
+        <StackPanel Grid.Row="2" VerticalAlignment="Center">
+            <StackPanel.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="Margin" Value="10"></Setter>
+                    <Setter Property="Background" Value="#ff6c6c"></Setter>
+                    <Setter Property="BorderBrush" Value="Black"></Setter>
+                    <Setter Property="BorderThickness" Value="1"></Setter>
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                    <Setter Property="Width" Value="300"></Setter>
+                </Style>
+                <Style TargetType="Button">
+                    <Setter Property="Padding" Value="5"></Setter>
+                    <Setter Property="FontSize" Value="13"></Setter>
+                    <Setter Property="FontWeight" Value="Bold"></Setter>
+                    <Setter Property="Background" Value="Transparent"></Setter>
+                    <Setter Property="BorderThickness" Value="0"></Setter>
+                    <Setter Property="Width" Value="300"></Setter>
+                </Style>
+                <Style TargetType="Label">
+                    <Setter Property="Margin" Value="10 5 0 -5"></Setter>
+                    <Setter Property="FontWeight" Value="SemiBold"></Setter>
+                    <Setter Property="FontSize" Value="13"></Setter>
+
+                </Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="Margin" Value="10 0 10 0"></Setter>
+                </Style>
+            </StackPanel.Resources>
+            <Border>
+                <Button Content="Editar" Name="Editar" Click="Editar_Click"></Button>
+            </Border>
+            <Border>
+                <Button Content="Eliminar" Name="Eliminar" Click="Eliminar_Click"></Button>
+            </Border>
+        </StackPanel>
+
+        <DataGrid Name="dtgDatos" SelectionChanged="dtgDatos_SelectionChanged" Grid.RowSpan="2" Margin="20" BorderBrush="#0000ea" BorderThickness="3" FontFamily="Calibri" FontSize="15" Background="#ff9d33"></DataGrid>
+    </Grid>
+</Window>

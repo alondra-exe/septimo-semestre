@@ -1,0 +1,15 @@
+﻿<Window x:Class="Gato.Lobby"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gato"
+        mc:Ignorable="d"
+        Title="Conexión de jugadores" Height="185.652" Width="500" Icon="/Resources\icontrol.ico" Background="#14bdac">
+    <StackPanel>
+        <TextBlock FontFamily="COOLVETICA" FontSize="32" Margin="20,10" Foreground="#5e4d4d">
+            Usuario:
+            <TextBlock Text="{Binding NombreJugador1}" FontSize="32" Margin="20,0" Foreground="#5e4d4d" FontFamily="COOLVETICA"></TextBlock>
+        </TextBlock>
+    </StackPanel>
+</Window>
