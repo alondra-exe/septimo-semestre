@@ -1,0 +1,43 @@
+﻿@model CatalogoBotanico.Models.Userdata
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+}
+<title>Administrador</title>
+<link href="~/usuarios.css" rel="stylesheet" />
+<header>
+    <a asp-action="Usuarios" asp-controller="Admin">&lsaquo; Volver</a>
+    <label>Catálogo</label>
+</header>
+<main>
+    <section>
+        <table class="usuarios">
+            <thead>
+                <tr>
+                    <th>
+                        <label>@Model.Name</label>
+                    </th>
+                    <th id="agregar">
+                        <a id="celda" href="~/Usuario/Agregar/@Model.Id">Añadir nuevo registro</a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var planta in Model.Plantdata)
+                {
+                    <tr>
+                        <td>
+                            <a href="~/Usuario/Tarjeta/@planta.Id">Ver</a>
+                        </td>
+                        <td><label>@planta.CommonName</label></td>
+                        <td>
+                            <a href="~/Usuario/Editar/@planta.Id">Editar</a>
+                        </td>
+                        <td>
+                            <a id="eliminar" href="~/Admin/BorrarPlanta/@planta.Id">Borrar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </section>
+</main>

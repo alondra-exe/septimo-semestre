@@ -1,0 +1,126 @@
+﻿html {
+    display: flex;
+    justify-content: center;
+    background-color: #382933;
+}
+
+body {
+    font-family: Tahoma, Geneva, sans-serif;
+    background-color: #382933;
+    margin: 0;
+}
+
+header {
+    width: 1000px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #519872;
+    text-align: right;
+}
+
+    header label {
+        font-size: 30px;
+        padding-right: 20px;
+    }
+
+    header a {
+        cursor: pointer;
+        text-decoration: none;
+        margin-left: 20px;
+        font-size: 20px;
+        float: left;
+        color: white;
+        background-color: #382933;
+        padding: 5px;
+        padding-right: 15px;
+        border-radius: 40px;
+    }
+
+        header a:hover {
+            background-color: #E24545;
+        }
+
+main {
+    text-align: center;
+    border-right: 1px solid #a4b494;
+    border-left: 1px solid #a4b494;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    padding: 15px;
+    background-color: #F3EFF1;
+}
+
+    main label, main textarea, main input[type=text], main p, main input[type=password] {
+        font-size: 20px;
+        margin: 5px;
+    }
+
+    main textarea, main input[type=text], main p, main input[type=password] {
+        border-radius: 50px;
+        font-size: 20px;
+        padding: 10px;
+        width: 50%;
+    }
+
+#biografia {
+    resize: none;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 10px;
+    resize: none;
+    width: 500px;
+    height: 50px;
+    font-family: Tahoma, Geneva, sans-serif;
+}
+
+main input[type=submit], a {
+    margin: 5px;
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+    background-color: #382933;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 40px;
+}
+
+    main input[type=submit]:hover, a:hover {
+        background-color: #7C5970;
+    }
+
+#eliminar:hover {
+    background-color: #E24545;
+}
+
+footer {
+    padding: 5px;
+    background-color: #382933;
+    text-align: center;
+    color: #a4b494;
+    font-size: 13px;
+}
+
+main img {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+}
+
+
+
+#imagePreview {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+}
+
+.options {
+    margin-top: 30px;
+}
+
+#cambiar, #eliminar {
+    font-size: 20px;
+    text-decoration: none;
+    padding: 5px;
+}

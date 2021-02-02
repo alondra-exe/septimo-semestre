@@ -1,0 +1,12 @@
+﻿@model CatalogoBotanico.Models.Userdata
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "LayoutHome";
+}
+<main>
+    <form method="post" asp-action="Activar" asp-controller="Home">
+        <p>Envíamos un código a su correo electrónico. Ingréselo para continuar.</p><br />
+        <input type="number" name="code" required /><br />
+        <input type="submit" value="Activar" />
+    </form>
+</main>

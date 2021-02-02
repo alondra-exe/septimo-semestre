@@ -1,0 +1,93 @@
+﻿html {
+    background-color: #382933;
+    font-family: Tahoma, Geneva, sans-serif;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+body {
+    width: 1000px;
+}
+
+header {
+    background-color: white;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#logo {
+    width: 350px;
+}
+
+main {
+    text-align: center;
+    background-color: #519872;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+
+footer {
+    padding: 5px;
+    background-color: #382933;
+    text-align: center;
+    color: #a4b494;
+}
+
+    footer p {
+        font-size: 13px;
+    }
+
+table {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+input[type=text], input[type=email], input[type=password], input[type=number] {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #a4b494;
+    color: #ffffff;
+    font-size: 20px;
+    font-family: Tahoma, Geneva, sans-serif;
+    padding: 3px;
+    margin: 5px;
+    width: 300px;
+}
+
+input[type=submit] {
+    border-radius: 30px;
+    background-color: #382933;
+    color: #ffffff;
+    font-size: 20px;
+    font-family: sans-serif;
+    padding: 6px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+    input[type=submit]:hover {
+        background-color: #a4b494;
+    }
+
+p, label {
+    font-size: 20px;
+    margin: 5px;
+}
+
+a {
+    color: #382933;
+    font-size: 20px;
+    margin: 5px;
+}
+
+    a:hover {
+        color: #a4b494;
+    }
+
+#admin{
+    font-size:15px;
+}

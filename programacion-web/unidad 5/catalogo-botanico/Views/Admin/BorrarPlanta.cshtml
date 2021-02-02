@@ -1,0 +1,16 @@
+﻿@model CatalogoBotanico.Models.Plantdata
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "LayoutAdmin";
+}
+<header>
+    <a href="~/Admin/CatalogoUsuario/@Model.IdUser">&lsaquo; Cancelar</a>
+    <label>Administrador</label>
+</header>
+<main>
+    <form method="post" asp-action="BorrarPlanta" asp-controller="Admin">
+        <label>Eliminar registro: @Model.CommonName</label><br />
+        <input id="eliminar" type="submit" value="Eliminar" />
+        <input type="number" asp-for="Id" hidden readonly />
+    </form>
+</main>

@@ -1,0 +1,45 @@
+﻿@model CatalogoBotanico.Models.ViewModels.PlantViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "LayoutUsuario";
+} 
+<header>
+    @if (User.IsInRole("User"))
+    {
+        <label>Agregar registro</label>
+    <a href="~/Usuario/Catalogo/@(Model.User.Id)">&lsaquo; Cancelar</a>
+    }
+    @if (User.IsInRole("Admin"))
+    {
+        <label>Administrador</label>
+<a href="~/Admin/CatalogoUsuario/@(Model.User.Id)">&lsaquo; Cancelar</a>
+    }
+</header>
+<main>
+    <form method="post" asp-action="Agregar" asp-controller="Usuario" enctype="multipart/form-data">
+        <img id="imagePreview" src="~/imgs/no-disponible.png" alt="Vista previa de la imagen" /><br />
+        <input type="file" id="fileUpload" asp-for="Archivo" accept="image/png" onchange="mostrarImagen(this)" /><br />
+        <input type="text" asp-for="Plant.CommonName" required placeholder="Nombre común" /><br />
+        <input type="text" asp-for="Plant.ScientificName" required placeholder="Nombre científico" /><br />
+        <input type="text" asp-for="Plant.Division" required placeholder="División" /><br />
+        <input type="text" asp-for="Plant.Family" required placeholder="Familia" /><br />
+        <input type="text" asp-for="Plant.Subfamily" required placeholder="Subfamilia" /><br />
+        <input type="text" asp-for="Plant.Gender" required placeholder="Género" /><br />
+        <textarea id="biografia" type="text" asp-for="Plant.Info" required placeholder="Añada una descripción breve"></textarea>
+        @Html.ValidationSummary()
+        <input type="submit" value="Guardar" />
+        <input type="number" asp-for="User.Id" hidden readonly />
+    </form>
+
+</main>
+<script>
+    function mostrarImagen(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById("imagePreview").src = e.target.result;
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>

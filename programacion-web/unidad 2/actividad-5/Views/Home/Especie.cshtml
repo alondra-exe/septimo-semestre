@@ -1,0 +1,25 @@
+﻿@model IEnumerable<MVCUnidad2Actividad4.Models.ViewModels.EspeciesViewModel>;
+@{
+    Layout = "_Layout";
+}
+
+@foreach (var especie in Model)
+{
+    <h1>@especie.NombreEspecie</h1>
+
+    <ul class="especies">
+        @foreach (var animales in especie.Especies)
+        {
+            <li>
+                <div>
+                    <img src="~/especies/@(animales.Id).jpg">
+                </div>
+                <h2>@animales.Especie</h2>
+                <p><label>Habitat: </label>@animales.Habitat</p>
+                <p><label>Peso: </label>@animales.Peso</p>
+                <p><label>Tamaño: </label>@animales.Tamaño</p>
+                <p>@animales.Observaciones</p>
+            </li>
+        }
+    </ul>
+}

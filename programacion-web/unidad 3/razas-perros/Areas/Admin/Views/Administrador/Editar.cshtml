@@ -1,0 +1,87 @@
+﻿@model RazasPerros.Models.ViewModels.RazaViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "_Layout";
+}
+<h2>Editar raza</h2>
+<form method="post" action="~/Admin/Administrador/Editar" enctype="multipart/form-data">
+    <input type="hidden" id="idRaza" asp-for="Raza.Id" />
+    <label>Id:</label>
+    <input required="required" type="number" asp-for="Raza.Id" />
+    <label>Nombre:</label>
+    <input required="required" type="text" asp-for="Raza.Nombre" />
+    <br />
+    <label>Descripción:</label>
+    <br />
+    <textarea required="required" asp-for="Raza.Descripcion" rows="6" cols="80"></textarea>
+    <br />
+    <label>Otros nombres:</label>
+    <input type="text" asp-for="Raza.OtrosNombres" required="required" />
+    <select asp-for="Raza.IdPais" asp-items="@(new SelectList(Model.Paises, "Id", "Nombre"))">
+        <option value="">Seleccione un país</option>
+    </select>
+    <br />
+    <label>Peso mínimo:</label>
+    <input type="number" asp-for="Raza.PesoMin" required="required" />
+    <label>Peso máximo:</label>
+    <input type="number" asp-for="Raza.PesoMax" required="required" />
+    <br />
+    <label>Altura mínimo:</label>
+    <input type="number" asp-for="Raza.AlturaMin" required="required" />
+    <label>Altura máximo:</label>
+    <input type="number" asp-for="Raza.AlturaMax" required="required" />
+    <br />
+    <label>Esparanza de vida:</label>
+    <input type="number" asp-for="Raza.EsperanzaVida" required="required" />
+    <h2>Características físicas:</h2>
+    <label>Patas:</label>
+    <input type="text" step="0.1" asp-for="Raza.Caracteristicasfisicas.Patas" required="required" />
+    <label>Cola:</label>
+    <input type="text" step="0.1" asp-for="Raza.Caracteristicasfisicas.Cola" required="required" />
+    <br />
+    <label>Hocico:</label>
+    <input type="text" step="0.1" asp-for="Raza.Caracteristicasfisicas.Hocico" required="required" />
+    <label>Pelo:</label>
+    <input type="text" step="0.1" asp-for="Raza.Caracteristicasfisicas.Pelo" required="required" />
+    <br />
+    <label>Colar:</label>
+    <input type="text" step="0.1" asp-for="Raza.Caracteristicasfisicas.Color" required="required" />
+    <h2>Estadística raza:</h2>
+    <label>Nivel de energía:</label>
+    <input type="number" step="0.1" asp-for="Raza.Estadisticasraza.NivelEnergia" required="required" />
+    <label>Facilidad de entrenamiento:</label>
+    <input type="number" step="0.1" asp-for="Raza.Estadisticasraza.FacilidadEntrenamiento" required="required" />
+    <br />
+    <label>Ejercicio obligatorio:</label>
+    <input type="number" step="0.1" asp-for="Raza.Estadisticasraza.EjercicioObligatorio" required="required" />
+    <label>Amistad con desconocidos:</label>
+    <input type="number" step="0.1" asp-for="Raza.Estadisticasraza.AmistadDesconocidos" required="required" />
+    <br />
+    <label>Amistad con perros:</label>
+    <input type="number" step="0.1" asp-for="Raza.Estadisticasraza.AmistadPerros" required="required" />
+    <label>Necesidad de cepillado:</label>
+    <input type="number" step="0.1" asp-for="Raza.Estadisticasraza.NecesidadCepillado" required="required" />
+    <br />
+    <input type="file" accept="image/jpg" asp-for="Archivo" onchange="mostrarImagen(this)" /><br />
+    <img id="imagePreview" src="~/imgs_perros/@(Model.Imagen)" alt="Vista previa de la imagen" height="100" width="200"  />
+    <div class="botones">
+        <p id="error">
+            @Html.ValidationSummary()
+        </p>
+        <input type="submit" value="Guardar" id="btnGuardar" />
+        <a href="~/Admin/Administrador">
+            <input type="button" value="Cancelar" id="btnCancelar" formnovalidate="formnovalidate" />
+        </a>
+    </div>
+</form>
+<script>
+    function mostrarImagen(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById("imagePreview").src = e.target.result;
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>

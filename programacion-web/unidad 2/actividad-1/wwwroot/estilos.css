@@ -1,0 +1,43 @@
+﻿html {
+    background: #C1CFC9;
+    font-family: Calibri;
+    margin: 10px;
+}
+
+header {
+    text-align: center;
+    font-family: 'Franklin Gothic Book';
+}
+
+body {
+    margin: 4px;
+    text-align:center;
+}
+
+body p{
+    font-size:20px;
+}
+
+    body input[type=number] {
+        font-family: Calibri;
+        margin: 5px;
+        font-size: 20px;
+        height: auto;
+        background-color: white;
+    }
+
+    body input[type=submit] {
+        font-family: Calibri;
+        margin: 10px;
+        background-color: #1C2020;
+        color: white;
+        font-size: 20px;
+        height: auto;
+        cursor: pointer;
+    }
+
+footer {
+    text-align: center;
+    border: 1px solid #101111;
+    height:auto;
+}

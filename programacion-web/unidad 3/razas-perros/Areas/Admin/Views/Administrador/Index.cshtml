@@ -1,0 +1,33 @@
+﻿@model IEnumerable<RazasPerros.Models.Razas>
+@{
+    Layout = "_Layout";
+}
+<h2>Lista de razas de perros</h2>
+<section class="listaRazas">
+    <h4>Añadir nueva raza</h4>
+    <table>
+        <caption>
+            <a href="~/Admin/Administrador/Agregar">
+                <img src="~/anadir.png" height="40" width="40" />
+            </a>
+        </caption>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="center">@item.Id</td>
+                <td>@item.Nombre</td>
+                <td><img src="~/imgs_perros/@(item.Id)_0.jpg" height="80" width="100" /></td>
+                <td class="center">
+                    <a href="~/Admin/Administrador/Editar/@(item.Id)">
+                        <img src="~/editar.png" height="50" width="50" />
+                        <i class="fa fa-edit"></i>
+                    </a>
+                    <a href="~/Admin/Administrador/Eliminar/@(item.Id)">
+                        <img src="~/eliminar.png" height="50" width="50" />
+                        <i class="fa fa-remove"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </table>
+</section>

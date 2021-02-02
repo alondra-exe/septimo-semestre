@@ -1,0 +1,14 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<head>
+    <title>Administrador</title>
+    <link href="~/admin.css" rel="stylesheet" />
+</head>
+    @if (User.IsInRole("User"))
+    {
+        <a href="~/Usuario/Catalogo/@(User.Claims.FirstOrDefault(x => x.Type == "Id").Value)">&lsaquo; Cancelar</a>
+        <label>Administrador</label>
+    }
+    @RenderBody()
+<footer>
+    <p>Realizado por Alondra Delgadillo y David Ríos 7.1G 2021</p>
+</footer>

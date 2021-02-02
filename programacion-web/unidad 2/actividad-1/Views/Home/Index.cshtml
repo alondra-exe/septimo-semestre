@@ -1,0 +1,25 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<head>
+    <title>Inicio | Alondra Elizabeth Delgadillo Silos</title>
+</head>
+<body>
+    <h3>Capturar datos</h3>
+    <hr />
+    <form method="post" action="~/Home/Resultado">
+        <fieldset>
+            <legend>Hacer suma</legend>
+            <p>Ingrese dos números a sumar:</p>
+            <label>Primer número = </label>
+            <input type="number" name="NumeroUno" />
+            <br />
+            <br />
+            <label>Segundo número = </label>
+            <input type="number" name="NumeroDos" />
+            <br />
+            <input type="submit" value="Sumar" />
+        </fieldset>
+    </form>
+</body>

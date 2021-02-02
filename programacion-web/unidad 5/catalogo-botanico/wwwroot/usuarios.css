@@ -1,0 +1,106 @@
+﻿html {
+    display: flex;
+    justify-content: center;
+    background-color: #382933;
+}
+
+body {
+    font-family: Tahoma, Geneva, sans-serif;
+    margin: 0;
+    background-color: #382933;
+}
+
+header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #519872;
+    text-align: right;
+}
+
+    header label {
+        font-size: 30px;
+        padding-right: 70px;
+    }
+
+    header a {
+        cursor: pointer;
+        text-decoration: none;
+        margin-left: 20px;
+        font-size: 20px;
+        float: left;
+        color: white;
+        background-color: #382933;
+        padding: 5px;
+        padding-right: 15px;
+        border-radius: 40px;
+    }
+
+        header a:hover {
+            background-color: #7C5970;
+        }
+
+main {
+    border-right: 1px solid #a4b494;
+    border-left: 1px solid #a4b494;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    padding: 15px;
+    background-color: #F3EFF1;
+}
+
+footer {
+    padding: 5px;
+    background-color: #382933;
+    text-align: center;
+    color: #a4b494;
+    font-size: 13px;
+}
+
+.usuarios, .usuarios th {
+    border: 2px solid #382933;
+    padding: 2px;
+    margin: 10px;
+}
+
+#agregar {
+    border: 0;
+}
+
+.usuarios thead {
+    color: black;
+}
+
+#opciones {
+    column-span: none;
+}
+
+.usuarios td, a {
+    padding: 10px;
+    font-size: 15px;
+}
+
+.usuarios a, #activo {
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 20px;
+    color: white;
+    background-color: #382933;
+    padding: 5px;
+    padding-right: 15px;
+    ;
+    padding-left: 15px;
+    border-radius: 40px;
+}
+
+    .usuarios a:hover {
+        background-color: #7C5970;
+    }
+
+#eliminar:hover {
+    background-color: #E24545;
+}
+
+#activo:hover {
+    background-color: #E24545;
+}

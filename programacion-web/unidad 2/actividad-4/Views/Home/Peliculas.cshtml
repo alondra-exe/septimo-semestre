@@ -1,0 +1,19 @@
+﻿@model List<MVCUnidad2Actividad4.Models.Pelicula>
+@{
+    Layout = "_Layout";
+
+}
+
+<div id="pelis">
+    @foreach (var pelicula in Model)
+    {
+        <div>
+            <a class="imgPelicula" href="~/Peliculas/@pelicula.Nombre.Replace(" ", "-")">
+                <img src="~/images/portadas/@(pelicula.Id)_p.jpg" alt="@pelicula.Nombre">
+            </a>
+            <div class="nombrePelicula">
+                <p>@pelicula.Nombre</p>
+            </div>
+        </div>
+    }
+</div>

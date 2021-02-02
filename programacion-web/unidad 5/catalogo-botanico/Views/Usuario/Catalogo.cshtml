@@ -1,0 +1,55 @@
+﻿@model CatalogoBotanico.Models.Userdata
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+}
+<head>
+    <title>Plantapedia</title>
+    <link href="~/catalogo.css" rel="stylesheet" />
+</head>
+<header>
+    <section id="logo">
+        <label id="planta">planta</label><label id="pedia">pedia</label>
+    </section>
+    <section id="add">
+        <a href="~/Usuario/Agregar/@User.Claims.FirstOrDefault(x => x.Type == "Id").Value">
+            Añadir registro &#10010;
+        </a>
+    </section>
+</header>
+<body>
+    <section class="datos">
+        <label id="alias">@Model.Alias</label><br />
+        <label id="name">@User.Claims.FirstOrDefault(x => x.Type == "Name").Value</label><br />
+        <p id="bio">@Model.Bio</p><br />
+        <a id="botones" href="~/Admin/EditarUsuario/@User.Claims.FirstOrDefault(x => x.Type == "Id").Value">Modificar mi perfil</a><br />
+        <a id="botones" asp-action="Cerrar" asp-controller="Home">Cerrar sesión</a>
+    </section>
+
+    <section class="catalogo">
+        <ul>
+            @foreach (var planta in Model.Plantdata)
+            {
+                <li id="card">
+                    <a id="borrar" href="#" onclick="eliminar(@planta.Id)"> &#10060;&#65038;</a>
+                    <a href="~/Usuario/Tarjeta/@planta.Id">
+                        <figure>
+                            <img src="~/imgs/@(planta.Id).png" alt="@planta.CommonName" />
+                            <figcaption>@planta.CommonName</figcaption>
+                        </figure>
+                    </a>
+                </li>
+            }
+        </ul>
+    </section>
+    <form method="post" asp-action="Borrar" asp-controller="Usuario">
+        <input type="number" name="Id" id="idPlanta" hidden />
+    </form>
+</body>
+<script>
+    function eliminar(id) {
+        if (confirm('¿Desea borrar este registro del catálogo ?')) {
+            document.getElementById("idPlanta").value = id;
+            document.querySelector("form").submit();
+        }
+    }
+</script>

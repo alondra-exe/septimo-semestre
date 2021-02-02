@@ -1,0 +1,15 @@
+﻿@model MVCUnidad2Actividad4.Models.Cortometraje
+@{
+    Layout = "_Layout";
+
+}
+
+<div id="principalVerCorto">
+    <img class="blur" src="~/images/portadas/@(Model.Id)_pc.jpg">
+    <div class="datosCorto">
+        <h1>@Model.Nombre</h1>
+        <p>
+            @Model.Descripcion
+        </p>
+    </div>
+</div>

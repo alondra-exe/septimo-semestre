@@ -1,0 +1,25 @@
+﻿@model Actividad1.Models.Usuario
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "LayoutOursCafe";
+}
+<main>
+    <h1>Regístrese en OursCafé</h1>
+    <p>
+        ¿Ya tienes cuenta?
+        <a href="~/Home/IniciarSesion">Inicia sesión</a>
+    </p>
+    <p>Para poder unirte a OursCafé, le pedimos que llene los siguientes datos:</p>
+    <form method="post" action="~/Home/Registrar">
+        <input type="text" asp-for="NombreUsuario" placeholder="Cree un nombre de usuario" required />
+        <br />
+        <input type="email" asp-for="CorreoElectronico" placeholder="Añada su correo electrónico" required />
+        <br />
+        <input type="password" asp-for="Contrasena" name="contra1" placeholder="Cree una contraseña" required />
+        <br />
+        <input type="password" asp-for="Contrasena" name="contra2" placeholder="Confirme su contraseña" required />
+        @Html.ValidationSummary()
+        <input type="submit" value="¡Regístrame!" onclick="registrarUsuario()" />
+        <br />
+    </form>
+</main>

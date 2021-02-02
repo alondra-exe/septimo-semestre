@@ -1,0 +1,59 @@
+﻿@model CatalogoBotanico.Models.Plantdata
+@{
+    Layout = "LayoutTarjeta";
+}
+@if (User.IsInRole("Admin"))
+{
+<header>
+    <label>Información</label>
+    <a href="~/Admin/CatalogoUsuario/@Model.IdUser">Volver</a>
+</header>
+<main>
+    <section class="card">
+        <img id="plantImage" src="~/imgs/@(Model.Id).png" />
+        <section class="datosplanta">
+            <label id="comun">@Model.CommonName</label><br />
+            <label id="cientifico">@Model.ScientificName</label><br />
+            <section class="division">
+                <label>División:</label>
+                <label>@Model.Division</label><br />
+                <label>Familia:</label>
+                <label>@Model.Family</label><br />
+                <label>Subfamilia:</label>
+                <label>@Model.Subfamily</label><br />
+                <label>Género:</label>
+                <label>@Model.Gender</label><br />
+                <p>@Model.Info</p>
+            </section>
+        </section>
+    </section>
+</main>
+}
+@if (User.IsInRole("User"))
+{
+<header>
+    <label>Información</label>
+    <a href="~/Usuario/Catalogo/@(User.Claims.FirstOrDefault(x => x.Type == "Id").Value)">&lsaquo; Cancelar</a>
+    <a href="~/Usuario/Editar/@Model.Id">Editar</a>
+</header>
+<main>
+    <section class="card">
+        <img id="plantImage" src="~/imgs/@(Model.Id).png" />
+        <section class="datosplanta">
+            <label id="comun">@Model.CommonName</label><br />
+            <label id="cientifico">@Model.ScientificName</label><br />
+            <section class="division">
+                <label>División:</label>
+                <label>@Model.Division</label><br />
+                <label>Familia:</label>
+                <label>@Model.Family</label><br />
+                <label>Subfamilia:</label>
+                <label>@Model.Subfamily</label><br />
+                <label>Género:</label>
+                <label>@Model.Gender</label><br />
+                <p>@Model.Info</p>
+            </section>
+        </section>
+    </section>
+</main>
+}

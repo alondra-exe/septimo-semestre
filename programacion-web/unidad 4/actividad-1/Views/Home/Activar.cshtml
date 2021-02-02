@@ -1,0 +1,13 @@
+﻿@model Actividad1.Models.Usuario
+@{
+    Layout = "LayoutOursCafe";
+}
+
+<main>
+    <h1>Activar mi cuenta</h1>
+    <form method="post" action="~/Home/Activar">
+        <p>Ingrese el código que se le envió a su correo</p>
+        <input type="number" name="codigo" required />
+        <input type="submit" value="Activar" />
+    </form>
+</main>

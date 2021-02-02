@@ -1,0 +1,60 @@
+﻿@model IEnumerable<CatalogoBotanico.Models.Userdata>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+}
+<head>
+    <title>Administrador</title>
+    <link href="~/usuarios.css" rel="stylesheet" />
+</head>
+<header>
+    <a asp-action="Cerrar" asp-controller="Home">&lsaquo; Cerrar sesión</a>
+    <label>Administrador</label>
+</header>
+
+<main>
+    <table class="usuarios">
+        <thead>
+            <tr>
+                <th>Nombre de usuario</th>
+                <th>Correo electrónico</th>
+                <th>Estado de la cuenta</th>
+                <th colspan=4>Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var users in Model)
+            {
+                <tr>
+                    <td id="celda">@users.Name</td>
+                    <td id="celda">@users.Email</td>
+                    <td id="activo" href="#" onclick="estado(@users.Id)">@((users.Active==1)?"Activada":"Desactivada")</td>
+                    @if (users.Active == 1)
+                    {
+                        <td>
+                            <a href="~/Admin/CatalogoUsuario/@(users.Id)">Ver catálogo</a>
+                        </td>
+                        <td>
+                            <a href="~/Admin/EditarUsuario/@(users.Id)">Modificar datos</a>
+                        </td>
+                        <td>
+                            <a href="~/Admin/CambiarClave/@(users.Id)">Cambiar contraseña</a>
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+</main>
+
+<footer>
+    <p>Realizado por Alondra Delgadillo y David Ríos 7.1G 2021</p>
+</footer>
+<form method="post" asp-action="ActivarUsuario" asp-controller="Admin">
+    <input type="number" id="idUser" name="Id" hidden />
+</form>
+<script>
+    function estado(id) {
+        document.getElementById("idUser").value = id;
+        document.querySelector("form").submit();
+    }
+</script>

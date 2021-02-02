@@ -1,0 +1,13 @@
+﻿@model CatalogoBotanico.Models.Admindata
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "LayoutHome";
+}
+<main>
+    <form method="post" asp-action="IniciarAdmin" asp-controller="Home">
+        <input type="text" asp-for="Name" required />
+        <input type="password" asp-for="Password" required />
+        <input type="submit" value="Acceder" />
+    </form>
+    @Html.ValidationSummary()
+</main>

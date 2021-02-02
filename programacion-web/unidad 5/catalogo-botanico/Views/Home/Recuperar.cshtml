@@ -1,0 +1,16 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "LayoutHome";
+}
+<main>
+    <a asp-action="Iniciar" asp-controller="Home">Volver</a>
+    <section class="formulario">
+        <form method="post" asp-action="Recuperar">
+            <label>Email:</label>
+            <input type="email" required name="Email" /><br /><br />
+            <input type="submit" value="Recuperar Contraseña" />
+            @Html.ValidationSummary()
+            <p>Recibirás una contraseña temporal en tu correo para iniciar sesión</p>
+        </form>
+    </section>
+</main>

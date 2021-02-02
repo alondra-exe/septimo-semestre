@@ -1,0 +1,23 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "LayoutHome";
+}
+
+@if (User.IsInRole("User"))
+{
+    <head>
+        <META http-equiv="refresh" content="1;url=/Usuario/Catalogo/@User.Claims.FirstOrDefault(x => x.Type == "Id").Value">
+    </head>
+    <body>
+        <h1>Estamos accediendo a tu catálogo</h1>
+    </body>
+}
+@if (User.IsInRole("Admin"))
+{
+    <head>
+        <META http-equiv="refresh" content="1;url=/Admin/Usuarios">
+    </head>
+    <body>
+        <h1>Estamos accediendo a los datos de los usuarios</h1>
+    </body>
+}

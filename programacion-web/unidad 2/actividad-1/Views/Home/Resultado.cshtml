@@ -1,0 +1,18 @@
+﻿@model MVC2Unidad1Actividad.Models.Suma;
+
+@{ 
+    Layout = "_Layout";
+}
+
+<head>
+    <title>Resultado | Alondra Elizabeth Delgadillo Silos</title>
+</head>
+<body>
+    <h3>Resultado</h3>
+    <hr />
+    <p>
+        El resultado de su suma es:
+        <br />
+        @Model.NumeroUno + @Model.NumeroDos = @Model.Total(Model.NumeroUno, Model.NumeroDos)
+    </p>
+</body>

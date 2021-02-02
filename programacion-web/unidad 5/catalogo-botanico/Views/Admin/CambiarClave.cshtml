@@ -1,0 +1,64 @@
+﻿@model CatalogoBotanico.Models.Userdata
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+}
+@if (User.IsInRole("User"))
+{
+    <head>
+        <title>Modificar perfil de usuario</title>
+        <link href="~/admin.css" rel="stylesheet" />
+    </head>
+
+    <header>
+        <label>@Model.Name</label>
+        <a href="~/Usuario/Catalogo/@(@User.Claims.FirstOrDefault(x=>x.Type == "Id").Value)">&lsaquo; Cancelar</a>
+    </header>
+
+    <main>
+        <form method="post" asp-action="CambiarClave" asp-controller="Admin">
+            <label>
+                Escriba la contraseña con la accede a su cuenta
+            </label><br />
+            <input type="password" name="pw" asp-for="Password" required /><br />
+            <label>
+                Ingrese los datos de la nueva contraseña
+            </label><br />
+            <input type="password" name="pw1" placeholder="Nueva contraseña" required /><br />
+            <input type="password" name="pw2" placeholder="Confirme su nueva contraseña" required /><br />
+            @Html.ValidationSummary()
+            <input type="submit" value="Cambiar" />
+            <input type="text" name="id" value="@User.Claims.FirstOrDefault(x=>x.Type == "Id").Value" hidden readonly />
+        </form>
+    </main>
+
+    <footer>
+        <p>Realizado por Alondra Delgadillo y David Ríos 7.1G 2021</p>
+    </footer>
+
+}
+@if (User.IsInRole("Admin"))
+{
+    <head>
+        <title>Modificar perfil de usuario</title>
+        <link href="~/admin.css" rel="stylesheet" />
+    </head>
+
+    <header>
+        <label>@Model.Name</label>
+        <a asp-action="Usuarios" asp-controller="Admin">&lsaquo; Cancelar</a>
+    </header>
+    <main>
+        <form method="post" href="~/Admin/CambiarClave/@Model.Id">
+            <label>Cambiando contraseña en la cuenta de @Model.Name</label><br />
+            <input type="password" name="pw1" placeholder="Nueva contraseña" asp-for="Password" required /><br />
+            <input type="password" name="pw2" placeholder="Confirme la nueva contraseña" required /><br />
+            @Html.ValidationSummary()
+            <input type="submit" value="Cambiar" />
+            <input type="number" asp-for="Id" hidden readonly />
+        </form>
+    </main>
+
+    <footer>
+        <p>Realizado por Alondra Delgadillo y David Ríos 7.1G 2021</p>
+    </footer>
+}

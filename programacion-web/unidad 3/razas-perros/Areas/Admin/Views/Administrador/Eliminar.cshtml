@@ -1,0 +1,21 @@
+﻿@model RazasPerros.Models.Razas
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "_Layout";
+}
+<form method="post" asp-action="Eliminar" asp-controller="Administrador" asp-area="Admin">
+    <div>
+        <h2>Eliminar raza</h2>
+        <input type="hidden" id="id" asp-for="Id" />
+        <p>¿Desea eliminar la raza de perros "<span id="nombreRaza">@Model.Nombre</span>"?</p>
+        <div class="botones">
+            <p id="error">
+                @Html.ValidationSummary()
+            </p>
+            <input type="submit" value="Sí, eliminar" id="btnSi" />
+            <a asp-action="Index" asp-controller="Administrador">
+                <input type="button" value="No, cancelar" id="btnNo" formnovalidate="formnovalidate" />
+            </a>
+        </div>
+    </div>
+    </form>

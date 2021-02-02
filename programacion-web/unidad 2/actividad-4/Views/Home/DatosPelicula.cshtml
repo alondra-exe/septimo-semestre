@@ -1,0 +1,44 @@
+﻿@model MVCUnidad2Actividad4.Models.DatosPeliculaViewModel
+@{
+    Layout = "_Layout";
+
+}
+
+<div id="principalVer">
+
+    <div class="container">
+        <img class="image1" src="~/images/banners/@(Model.Id)_b.jpg">
+        <div class="overlay">
+            <img class="image2" src="~/images/banners/@(Model.Id)_b.png">
+        </div>
+
+    </div>
+
+    <div class="datosPelicula">
+        <h1>@Model.Nombre</h1>
+        <h2>
+            @Model.NombreOriginal • @Model.FechaEstreno.Value.ToShortDateString()
+        </h2>
+        <p>
+            @Model.Descripcion
+        </p>
+
+
+        <div class="personajes">
+            <h2>Personajes</h2>
+            @foreach (var personaje in Model.Apariciones)
+            {
+                <div>
+                    <a>
+                        <img src="~/images/personajes/@(personaje.IdPersonaje).jpg" alt="@personaje.IdPersonajeNavigation.Nombre">
+                    </a>
+                    <div class="nombrePelicula">
+                        <p>@personaje.IdPersonajeNavigation.Nombre</p>
+                    </div>
+                </div>
+            }
+            <div>
+            </div>
+        </div>
+    </div>
+</div>

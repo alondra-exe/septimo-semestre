@@ -1,0 +1,27 @@
+﻿@model IEnumerable<MVCUnidad2Actividad4.Models.Clase>;
+@{
+    Layout = "_Layout";
+}
+
+<div class="slides">
+    @{Random r = new Random();
+        var ima = r.Next(1, 6);
+        <img src="images/carousel@(ima).jpg">
+    }
+</div>
+
+
+<h1>Clasificación de los vertebrados</h1>
+
+<div class="clases">
+    @foreach (var c in Model)
+    {
+        <div>
+            <a href="~/Especie/@(c.Nombre)">
+                <img src="~/clases/@(c.Id).jpg">
+                <h1>@c.Nombre</h1>
+                <p>@c.Descripcion</p>
+            </a>
+        </div>
+    }
+</div>

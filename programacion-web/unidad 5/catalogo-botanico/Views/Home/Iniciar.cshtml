@@ -1,0 +1,17 @@
+﻿@model CatalogoBotanico.Models.Userdata
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "LayoutHome";
+}
+<main>
+    <a asp-action="Registrar" asp-controller="Home">Regístrate en Plantapedia</a><br />
+    <form method="post" asp-action="Iniciar" asp-controller="Home">
+        <input type="email" asp-for="Email" placeholder="correo" required /><br />
+        <input type="password" asp-for="Password" placeholder="contraseña" required /><br />
+        <input type="checkbox" id="cbrecordar" name="recordar" value="true" />
+        <label for="cbrecordar">Mantener conectado</label><br />
+        @Html.ValidationSummary()<input type="submit" value="Iniciar sesión" /><br />
+    </form>
+    <a asp-action="Recuperar" asp-controller="Home">¿Olvidaste tu contraseña?</a><br />
+    <a id="admin" asp-action="IniciarAdmin" asp-controller="Home">Quiero acceder como admnistrador</a>
+</main>

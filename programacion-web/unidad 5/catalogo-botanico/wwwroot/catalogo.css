@@ -1,0 +1,158 @@
+﻿body {
+    font-family: Tahoma, Geneva, sans-serif;
+    background-color: #382933;
+}
+
+header {
+    text-align: right;
+    float: right;
+    height: 80px;
+    background-color: #519872;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+    header section label {
+        font-family: Coolvetica;
+        font-size: 60px;
+        font-weight: bold;
+    }
+
+section #planta {
+    color: white;
+}
+
+section #pedia {
+    color: #382933;
+}
+
+#logo {
+    width: 350px;
+}
+
+#add {
+    margin-left: 85%;
+    margin-top: -45px;
+    text-align: center;
+    width: 230px;
+}
+
+    #add a {
+        background-color: #382933;
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: bold;
+        padding: 10px;
+        font-size: 20px;
+    }
+
+        #add a:hover {
+            background-color: #7C5970;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            padding: 10px;
+            font-size: 20px;
+        }
+
+.datos {
+    padding-top: 50px;
+    width: 300px;
+    background-color: #3b5249;
+    text-align: center;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    bottom: 0;
+}
+
+#botones {
+    cursor: pointer;
+    color: #382933;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+    #botones:hover {
+        color: #7C5970;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+#icon {
+    width: 100px;
+    border: 5px solid #382933;
+    border-radius: 80px;
+}
+
+#alias {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+#name {
+    font-size: 20px;
+}
+
+.catalogo {
+    margin-left: 292px;
+    margin-top: 60px;
+    background-color: #382933;
+}
+
+    .catalogo ul {
+        list-style: none;
+    }
+
+    .catalogo #card {
+        width: 380px;
+        padding: 20px;
+        border-radius: 40px;
+        display: inline-block;
+        margin: 20px;
+        text-align: left;
+    }
+
+figcaption {
+    display: none;
+}
+
+figure:hover > figcaption {
+    display: block;
+}
+
+figure img {
+    margin-top: 5px;
+    border-radius: 50px;
+    width: 360px;
+}
+
+figure:hover > img {
+    margin-top: -20px;
+    border-radius: 50px;
+    width: 360px;
+}
+
+.catalogo #card a {
+    text-decoration: none;
+}
+
+.catalogo #card a {
+    color: white;
+    font-size: 20px;
+}
+
+.catalogo #card figcaption {
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    cursor: pointer;
+}
